@@ -34,7 +34,7 @@ Blog post: [Golden Images and Proxmox Templates with cloud-init]
   `/var/lib/vz/snippets/` (default directory for the script):
 
   ```bash
-  wget -P /var/lib/vz/snippets/ https://raw.githubusercontent.com/trfore/proxmox-template-scripts/refs/heads/main/cloud-init/vendor-data.yaml
+  wget -P /var/lib/vz/snippets/ https://raw.githubusercontent.com/felixHNG7/proxmox-template-scripts/refs/heads/main/cloud-init/vendor-data.yaml
   ```
 
 - Copy the scripts into `/usr/local/bin` on your Proxmox node(s):
@@ -42,14 +42,14 @@ Blog post: [Golden Images and Proxmox Templates with cloud-init]
   - For Systems using LVM Storage (Default) - [scripts](/scripts/)
 
     ```bash
-    wget -P /usr/local/bin/ https://raw.githubusercontent.com/trfore/proxmox-template-scripts/refs/heads/main/scripts/{build-template,image-update}
+    wget -P /usr/local/bin/ https://raw.githubusercontent.com/felixHNG7/proxmox-template-scripts/refs/heads/main/scripts/{build-template,image-update}
     ```
 
   - For Systems using ZFS Storage - [scripts-zfs](/scripts-zfs/)
 
     ```bash
-    wget -P /usr/local/bin/ https://raw.githubusercontent.com/trfore/proxmox-template-scripts/refs/heads/main/scripts/{image-update}
-    wget -P /usr/local/bin/ https://raw.githubusercontent.com/trfore/proxmox-template-scripts/refs/heads/main/scripts-zfs/{build-template}
+    wget -P /usr/local/bin/ https://raw.githubusercontent.com/felixHNG7/proxmox-template-scripts/refs/heads/main/scripts/{image-update}
+    wget -P /usr/local/bin/ https://raw.githubusercontent.com/felixHNG7/proxmox-template-scripts/refs/heads/main/scripts-zfs/{build-template}
     ```
 
 - Change the scripts ownership and permissions:
@@ -173,7 +173,7 @@ step 3. Or create a service and timer template, as follows:
    [Unit]
    After=network-online.target
    Description= Check for updated cloud image %i
-   Documentation=https://github.com/trfore/proxmox-template-scripts
+   Documentation=https://github.com/felixHNG7/proxmox-template-scripts
 
    [Service]
    Type=oneshot
@@ -188,7 +188,7 @@ step 3. Or create a service and timer template, as follows:
    ```xml
    [Unit]
    Description=Check for updated cloud image %i
-   Documentation=https://github.com/trfore/proxmox-template-scripts
+   Documentation=https://github.com/felixHNG7/proxmox-template-scripts
 
    [Timer]
    OnCalendar=*-*-10 02:00:00
@@ -266,9 +266,9 @@ build-template -i 9000 -n ubuntu24 --img /var/lib/vz/template/iso/ubuntu-24.04-s
 
 ## Contributors
 
-- [trfore](https://github.com/trfore) - original author and maintainer
+- [felixHNG7](https://github.com/felixHNG7) - original author and maintainer
 
-Special thanks to all those who have [contributed to the project](https://github.com/trfore/proxmox-template-scripts/graphs/contributors)!
+Special thanks to all those who have [contributed to the project](https://github.com/felixHNG7/proxmox-template-scripts/graphs/contributors)!
 
 Interested in adding a distro or fixing a bug? Feel free to create an issue or pull request!
 
@@ -312,7 +312,7 @@ Proxmox:
 [Fedora Cloud Images]: https://fedoraproject.org/cloud/download
 [Ubuntu Cloud Images]: https://cloud-images.ubuntu.com/releases/
 [OpenStack: Cloud Images]: https://docs.openstack.org/image-guide/obtain-images.html
-[Golden Images and Proxmox Templates with cloud-init]: https://www.trfore.com/posts/golden-images-and-proxmox-templates-using-cloud-init/
+[Golden Images and Proxmox Templates with cloud-init]: https://www.felixHNG7.com/posts/golden-images-and-proxmox-templates-using-cloud-init/
 [Proxmox]: https://www.proxmox.com/
 [Proxmox templates]: https://pve.proxmox.com/wiki/VM_Templates_and_Clones
 [snippets]: https://pve.proxmox.com/wiki/Storage
